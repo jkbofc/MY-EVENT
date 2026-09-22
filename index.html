@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>MY EVENT | Angul</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#fff;
+    color:#222;
+}
+
+/* NAVBAR */
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:#ffffffee;
+    backdrop-filter:blur(10px);
+    box-shadow:0 2px 15px rgba(0,0,0,.08);
+}
+
+.navbar{
+    max-width:1200px;
+    margin:auto;
+    padding:18px 25px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:27px;
+    font-weight:800;
+    color:#d81b60;
+}
+
+.logo span{
+    display:block;
+    font-size:11px;
+    letter-spacing:2px;
+    color:#555;
+}
+
+nav a{
+    text-decoration:none;
+    color:#222;
+    margin-left:25px;
+    font-weight:600;
+}
+
+nav a:hover{
+    color:#d81b60;
+}
+
+/* HERO */
+.hero{
+    min-height:90vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:60px 20px;
+    background:
+    linear-gradient(135deg,#fff0f6,#fff8e8,#eef8ff);
+}
+
+.hero-content{
+    max-width:850px;
+}
+
+.badge{
+    display:inline-block;
+    padding:8px 18px;
+    border-radius:30px;
+    background:white;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+    margin-bottom:20px;
+    color:#d81b60;
+    font-weight:bold;
+}
+
+.hero h1{
+    font-size:clamp(55px,10vw,100px);
+    line-height:1;
+    margin-bottom:20px;
+    background:linear-gradient(90deg,#d81b60,#ff7b00);
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+.hero h2{
+    font-size:clamp(22px,4vw,38px);
+    margin-bottom:15px;
+}
+
+.hero p{
+    color:#666;
+    font-size:18px;
+    margin-bottom:30px;
+}
+
+.btn{
+    display:inline-block;
+    padding:15px 30px;
+    border:none;
+    border-radius:30px;
+    background:#d81b60;
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 10px 25px rgba(216,27,96,.25);
+}
+
+/* COMMON */
+section{
+    padding:80px 20px;
+}
+
+.container{
+    max-width:1100px;
+    margin:auto;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:45px;
+}
+
+.section-title h2{
+    font-size:38px;
+    margin-bottom:10px;
+}
+
+.section-title p{
+    color:#777;
+}
+
+/* SERVICES */
+.services{
+    background:#fff;
+}
+
+.service-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:22px;
+}
+
+.card{
+    background:white;
+    padding:30px 20px;
+    text-align:center;
+    border-radius:20px;
+    box-shadow:0 8px 30px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.card .icon{
+    font-size:45px;
+    margin-bottom:15px;
+}
+
+.card h3{
+    margin-bottom:10px;
+}
+
+.card p{
+    color:#777;
+    line-height:1.6;
+}
+
+/* WHY US */
+.why{
+    background:#fafafa;
+}
+
+.why-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:20px;
+}
+
+.why-box{
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 5px 20px rgba(0,0,0,.06);
+}
+
+.why-box strong{
+    color:#d81b60;
+    display:block;
+    margin-bottom:8px;
+}
+
+/* BOOKING */
+.booking{
+    background:linear-gradient(135deg,#fff5f8,#fffaf0);
+}
+
+.booking-box{
+    max-width:850px;
+    margin:auto;
+    background:white;
+    padding:35px;
+    border-radius:25px;
+    box-shadow:0 10px 40px rgba(0,0,0,.1);
+}
+
+.form-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:18px;
+}
+
+.form-group{
+    display:flex;
+    flex-direction:column;
+}
+
+.form-group.full{
+    grid-column:1/-1;
+}
+
+label{
+    margin-bottom:7px;
+    font-weight:bold;
+}
+
+input,select,textarea{
+    width:100%;
+    padding:13px 15px;
+    border:1px solid #ddd;
+    border-radius:10px;
+    outline:none;
+    font-size:15px;
+}
+
+input:focus,select:focus,textarea:focus{
+    border-color:#d81b60;
+}
+
+textarea{
+    min-height:100px;
+    resize:vertical;
+}
+
+/* TERMS */
+.terms{
+    margin-top:30px;
+    padding:25px;
+    border-radius:15px;
+    background:#fafafa;
+    border:1px solid #eee;
+}
+
+.terms h3{
+    margin-bottom:15px;
+}
+
+.terms ul{
+    padding-left:20px;
+    color:#666;
+    line-height:1.8;
+}
+
+.agree{
+    display:flex;
+    gap:10px;
+    align-items:flex-start;
+    margin-top:20px;
+    font-weight:600;
+}
+
+.agree input{
+    width:18px;
+    height:18px;
+    margin-top:2px;
+}
+
+.confirm-btn{
+    width:100%;
+    margin-top:20px;
+}
+
+.confirm-btn:disabled{
+    background:#aaa;
+    cursor:not-allowed;
+    box-shadow:none;
+    transform:none;
+}
+
+/* CONTACT */
+.contact{
+    background:#171717;
+    color:white;
+}
+
+.contact-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:30px;
+    text-align:center;
+}
+
+.contact-box{
+    padding:20px;
+}
+
+.contact-box .icon{
+    font-size:35px;
+    margin-bottom:10px;
+}
+
+.contact-box p{
+    color:#ccc;
+    margin-top:8px;
+}
+
+/* FOOTER */
+footer{
+    background:#0e0e0e;
+    color:#aaa;
+    text-align:center;
+    padding:25px 15px;
+}
+
+footer strong{
+    color:white;
+}
+
+/* POPUP */
+.popup{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.6);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    z-index:2000;
+    padding:20px;
+}
+
+.popup-box{
+    background:white;
+    max-width:450px;
+    width:100%;
+    padding:35px;
+    border-radius:20px;
+    text-align:center;
+}
+
+.popup-box h2{
+    color:#d81b60;
+    margin-bottom:15px;
+}
+
+.popup-box p{
+    color:#666;
+    line-height:1.6;
+    margin-bottom:20px;
+}
+
+/* MOBILE */
+@media(max-width:700px){
+
+    .navbar{
+        flex-direction:column;
+        gap:12px;
+    }
+
+    nav a{
+        margin:0 7px;
+        font-size:13px;
+    }
+
+    .hero{
+        min-height:80vh;
+    }
+
+    .form-grid{
+        grid-template-columns:1fr;
+    }
+
+    .form-group.full{
+        grid-column:auto;
+    }
+
+    .booking-box{
+        padding:22px;
+    }
+
+    section{
+        padding:60px 15px;
+    }
+
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+<header>
+<div class="navbar">
+
+<div class="logo">
+MY EVENT
+<span>Celebrate. Decorate. Remember.</span>
+</div>
+
+<nav>
+<a href="#home">Home</a>
+<a href="#services">Services</a>
+<a href="#booking">Book</a>
+<a href="#contact">Contact</a>
+</nav>
+
+</div>
+</header>
+
+
+<!-- HERO -->
+<section class="hero" id="home">
+
+<div class="hero-content">
+
+<div class="badge">📍 Angul, Odisha</div>
+
+<h1>MY EVENT</h1>
+
+<h2>Celebrate. Decorate. Remember.</h2>
+
+<p>
+Make your special moments beautiful, memorable and unforgettable.
+</p>
+
+<a href="#booking" class="btn">
+BOOK YOUR EVENT
+</a>
+
+</div>
+
+</section>
+
+
+<!-- SERVICES -->
+<section class="services" id="services">
+
+<div class="container">
+
+<div class="section-title">
+<h2>Our Services</h2>
+<p>Everything you need for your special event.</p>
+</div>
+
+<div class="service-grid">
+
+<div class="card">
+<div class="icon">🎉</div>
+<h3>Event Decoration</h3>
+<p>Beautiful decoration concepts for your special occasions.</p>
+</div>
+
+<div class="card">
+<div class="icon">🎂</div>
+<h3>Birthday Party</h3>
+<p>Make birthdays more colourful, fun and memorable.</p>
+</div>
+
+<div class="card">
+<div class="icon">💍</div>
+<h3>Wedding Decoration</h3>
+<p>Elegant decoration for wedding and related celebrations.</p>
+</div>
+
+<div class="card">
+<div class="icon">🎊</div>
+<h3>Anniversary</h3>
+<p>Create a beautiful atmosphere for your special day.</p>
+</div>
+
+<div class="card">
+<div class="icon">🏢</div>
+<h3>Corporate Event</h3>
+<p>Professional event decoration and arrangements.</p>
+</div>
+
+<div class="card">
+<div class="icon">🎈</div>
+<h3>Other Events</h3>
+<p>Customized event solutions according to your requirements.</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- WHY MY EVENT -->
+<section class="why">
+
+<div class="container">
+
+<div class="section-title">
+<h2>Why MY EVENT?</h2>
+<p>We focus on making your special moments memorable.</p>
+</div>
+
+<div class="why-grid">
+
+<div class="why-box">
+<strong>✓ Beautiful Decoration</strong>
+<p>Creative and attractive event decoration.</p>
+</div>
+
+<div class="why-box">
+<strong>✓ Event Planning</strong>
+<p>Plan your event according to your requirements.</p>
+</div>
+
+<div class="why-box">
+<strong>✓ Customized Packages</strong>
+<p>Flexible options for different types of events.</p>
+</div>
+
+<div class="why-box">
+<strong>✓ Professional Service</strong>
+<p>Dedicated service for your special occasion.</p>
+</div>
+
+<div class="why-box">
+<strong>✓ Easy Booking</strong>
+<p>Simple online booking request process.</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- BOOKING -->
+<section class="booking" id="booking">
+
+<div class="container">
+
+<div class="section-title">
+<h2>Book Your Event</h2>
+<p>Fill in your event details below.</p>
+</div>
+
+<div class="booking-box">
+
+<form id="bookingForm">
+
+<div class="form-grid">
+
+<div class="form-group">
+<label>Your Name *</label>
+<input type="text" id="name" required placeholder="Enter your name">
+</div>
+
+<div class="form-group">
+<label>Phone Number *</label>
+<input type="tel" id="phone" required placeholder="Enter phone number">
+</div>
+
+<div class="form-group">
+<label>Event Type *</label>
+
+<select id="eventType" required>
+
+<option value="">Select Event</option>
+<option>Birthday Party</option>
+<option>Wedding</option>
+<option>Anniversary</option>
+<option>Corporate Event</option>
+<option>Decoration</option>
+<option>Other Event</option>
+
+</select>
+
+</div>
+
+<div class="form-group">
+<label>Number of Guests</label>
+<input type="number" id="guests" placeholder="Approx. guests">
+</div>
+
+<div class="form-group">
+<label>Event Date *</label>
+<input type="date" id="date" required>
+</div>
+
+<div class="form-group">
+<label>Event Time *</label>
+<input type="time" id="time" required>
+</div>
+
+<div class="form-group full">
+<label>Venue / Address *</label>
+<input type="text" id="venue" required placeholder="Enter event venue">
+</div>
+
+<div class="form-group full">
+<label>Additional Requirements</label>
+<textarea id="message" placeholder="Tell us about your decoration or event requirements"></textarea>
+</div>
+
+</div>
+
+
+<!-- TERMS -->
+<div class="terms">
+
+<h3>Terms & Conditions</h3>
+
+<ul>
+
+<li>Booking is subject to date and service availability.</li>
+
+<li>Event details provided by the customer must be correct.</li>
+
+<li>Required advance/payment confirmation may be applicable before final booking confirmation.</li>
+
+<li>Cancellation or rescheduling will be subject to the applicable booking policy.</li>
+
+<li>Decoration requirements should be communicated before confirmation.</li>
+
+<li>Final service details will be confirmed with the customer.</li>
+
+</ul>
+
+
+<label class="agree">
+
+<input type="checkbox" id="agree">
+
+<span>
+I have read and agree to the Terms & Conditions.
+</span>
+
+</label>
+
+
+<button type="submit" id="confirmBtn" class="btn confirm-btn" disabled>
+
+CONFIRM BOOKING
+
+</button>
+
+</div>
+
+</form>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+
+<div class="container">
+
+<div class="section-title">
+<h2>Contact Us</h2>
+<p>Let's make your event special.</p>
+</div>
+
+<div class="contact-grid">
+
+<div class="contact-box">
+<div class="icon">📍</div>
+<h3>Location</h3>
+<p>Angul, Odisha</p>
+</div>
+
+<div class="contact-box">
+<div class="icon">📞</div>
+<h3>Phone</h3>
+<p>Add your phone number</p>
+</div>
+
+<div class="contact-box">
+<div class="icon">💬</div>
+<h3>WhatsApp</h3>
+<p>Add your WhatsApp number</p>
+</div>
+
+<div class="contact-box">
+<div class="icon">📧</div>
+<h3>Email</h3>
+<p>Add your email address</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+
+<p>
+<strong>MY EVENT</strong><br>
+Celebrate. Decorate. Remember.
+</p>
+
+<br>
+
+<p>
+© 2026 MY EVENT • All Rights Reserved
+</p>
+
+</footer>
+
+
+<!-- SUCCESS POPUP -->
+<div class="popup" id="popup">
+
+<div class="popup-box">
+
+<h2>🎉 Booking Request Sent!</h2>
+
+<p>
+Thank you for choosing MY EVENT.
+Your booking request has been received.
+We will contact you for confirmation.
+</p>
+
+<button class="btn" onclick="closePopup()">
+OK
+</button>
+
+</div>
+
+</div>
+
+
+<script>
+
+/* TERMS CHECKBOX */
+
+const agree = document.getElementById("agree");
+const confirmBtn = document.getElementById("confirmBtn");
+
+agree.addEventListener("change", function(){
+
+    confirmBtn.disabled = !this.checked;
+
+});
+
+
+/* BOOKING FORM */
+
+const form = document.getElementById("bookingForm");
+const popup = document.getElementById("popup");
+
+form.addEventListener("submit", function(e){
+
+    e.preventDefault();
+
+    if(!agree.checked){
+
+        alert("Please agree to the Terms & Conditions before confirming your booking.");
+
+        return;
+
+    }
+
+    popup.style.display = "flex";
+
+});
+
+
+/* CLOSE POPUP */
+
+function closePopup(){
+
+    popup.style.display = "none";
+
+    form.reset();
+
+    confirmBtn.disabled = true;
+
+}
+
+</script>
+
+</body>
+</html>
