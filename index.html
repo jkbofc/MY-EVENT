@@ -4,264 +4,144 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>MY EVENT | Angul</title>
+<title>EVENT 19 ANGUL</title>
 
 <style>
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial, Helvetica, sans-serif;
-}
-
-html{
-    scroll-behavior:smooth;
+    font-family:Arial, sans-serif;
 }
 
 body{
-    background:#fff;
+    background:#f7f7f7;
     color:#222;
 }
 
-/* NAVBAR */
 header{
-    position:sticky;
-    top:0;
-    z-index:1000;
-    background:#ffffffee;
-    backdrop-filter:blur(10px);
-    box-shadow:0 2px 15px rgba(0,0,0,.08);
-}
-
-.navbar{
-    max-width:1200px;
-    margin:auto;
-    padding:18px 25px;
+    background:linear-gradient(135deg,#111,#333);
+    color:white;
+    padding:18px 7%;
     display:flex;
     justify-content:space-between;
     align-items:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
 }
 
 .logo{
-    font-size:27px;
-    font-weight:800;
-    color:#d81b60;
-}
-
-.logo span{
-    display:block;
-    font-size:11px;
-    letter-spacing:2px;
-    color:#555;
+    font-size:25px;
+    font-weight:bold;
+    letter-spacing:1px;
 }
 
 nav a{
+    color:white;
     text-decoration:none;
-    color:#222;
-    margin-left:25px;
-    font-weight:600;
+    margin-left:20px;
+    font-size:15px;
 }
 
-nav a:hover{
-    color:#d81b60;
-}
-
-/* HERO */
 .hero{
-    min-height:90vh;
+    min-height:85vh;
     display:flex;
     align-items:center;
     justify-content:center;
     text-align:center;
-    padding:60px 20px;
+    color:white;
+    padding:40px 20px;
     background:
-    linear-gradient(135deg,#fff0f6,#fff8e8,#eef8ff);
-}
-
-.hero-content{
-    max-width:850px;
-}
-
-.badge{
-    display:inline-block;
-    padding:8px 18px;
-    border-radius:30px;
-    background:white;
-    box-shadow:0 5px 20px rgba(0,0,0,.08);
-    margin-bottom:20px;
-    color:#d81b60;
-    font-weight:bold;
+    linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.65)),
+    url("https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=1600&q=80")
+    center/cover;
 }
 
 .hero h1{
-    font-size:clamp(55px,10vw,100px);
-    line-height:1;
-    margin-bottom:20px;
-    background:linear-gradient(90deg,#d81b60,#ff7b00);
-    -webkit-background-clip:text;
-    color:transparent;
-}
-
-.hero h2{
-    font-size:clamp(22px,4vw,38px);
+    font-size:55px;
     margin-bottom:15px;
 }
 
 .hero p{
-    color:#666;
-    font-size:18px;
+    font-size:20px;
     margin-bottom:30px;
 }
 
 .btn{
     display:inline-block;
-    padding:15px 30px;
-    border:none;
+    background:#ffb300;
+    color:#111;
+    padding:14px 28px;
     border-radius:30px;
-    background:#d81b60;
-    color:white;
     text-decoration:none;
     font-weight:bold;
+    border:none;
     cursor:pointer;
+}
+
+section{
+    padding:65px 7%;
+}
+
+.title{
+    text-align:center;
+    font-size:35px;
+    margin-bottom:35px;
+}
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:18px;
+}
+
+.gallery img{
+    width:100%;
+    height:230px;
+    object-fit:cover;
+    border-radius:15px;
     transition:.3s;
 }
 
-.btn:hover{
-    transform:translateY(-3px);
-    box-shadow:0 10px 25px rgba(216,27,96,.25);
+.gallery img:hover{
+    transform:scale(1.03);
 }
 
-/* COMMON */
-section{
-    padding:80px 20px;
-}
-
-.container{
-    max-width:1100px;
-    margin:auto;
-}
-
-.section-title{
-    text-align:center;
-    margin-bottom:45px;
-}
-
-.section-title h2{
-    font-size:38px;
-    margin-bottom:10px;
-}
-
-.section-title p{
-    color:#777;
-}
-
-/* SERVICES */
 .services{
-    background:#fff;
-}
-
-.service-grid{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:22px;
+    gap:20px;
 }
 
 .card{
     background:white;
-    padding:30px 20px;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
     text-align:center;
-    border-radius:20px;
-    box-shadow:0 8px 30px rgba(0,0,0,.08);
-    transition:.3s;
-}
-
-.card:hover{
-    transform:translateY(-8px);
-}
-
-.card .icon{
-    font-size:45px;
-    margin-bottom:15px;
 }
 
 .card h3{
     margin-bottom:10px;
 }
 
-.card p{
-    color:#777;
-    line-height:1.6;
-}
-
-/* WHY US */
-.why{
-    background:#fafafa;
-}
-
-.why-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-    gap:20px;
-}
-
-.why-box{
-    background:white;
-    padding:25px;
-    border-radius:15px;
-    box-shadow:0 5px 20px rgba(0,0,0,.06);
-}
-
-.why-box strong{
-    color:#d81b60;
-    display:block;
-    margin-bottom:8px;
-}
-
-/* BOOKING */
-.booking{
-    background:linear-gradient(135deg,#fff5f8,#fffaf0);
-}
-
-.booking-box{
-    max-width:850px;
+.form-box{
+    max-width:750px;
     margin:auto;
     background:white;
-    padding:35px;
-    border-radius:25px;
-    box-shadow:0 10px 40px rgba(0,0,0,.1);
-}
-
-.form-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:18px;
-}
-
-.form-group{
-    display:flex;
-    flex-direction:column;
-}
-
-.form-group.full{
-    grid-column:1/-1;
-}
-
-label{
-    margin-bottom:7px;
-    font-weight:bold;
+    padding:30px;
+    border-radius:18px;
+    box-shadow:0 5px 25px rgba(0,0,0,.1);
 }
 
 input,select,textarea{
     width:100%;
-    padding:13px 15px;
+    padding:13px;
+    margin:8px 0 15px;
     border:1px solid #ddd;
-    border-radius:10px;
-    outline:none;
+    border-radius:8px;
     font-size:15px;
-}
-
-input:focus,select:focus,textarea:focus{
-    border-color:#d81b60;
 }
 
 textarea{
@@ -269,126 +149,85 @@ textarea{
     resize:vertical;
 }
 
-/* TERMS */
+.payment-box{
+    background:#fff8e1;
+    padding:18px;
+    border-radius:12px;
+    margin:15px 0;
+}
+
 .terms{
-    margin-top:30px;
-    padding:25px;
-    border-radius:15px;
-    background:#fafafa;
-    border:1px solid #eee;
+    background:#f5f5f5;
+    padding:18px;
+    border-radius:10px;
+    margin:20px 0;
+    line-height:1.7;
+    font-size:14px;
 }
 
-.terms h3{
-    margin-bottom:15px;
+.terms label{
+    display:block;
+    margin-top:15px;
+    font-weight:bold;
 }
 
-.terms ul{
-    padding-left:20px;
-    color:#666;
-    line-height:1.8;
+.terms input{
+    width:auto;
+    margin-right:8px;
 }
 
-.agree{
+.history{
+    max-width:1000px;
+    margin:auto;
+}
+
+.search{
     display:flex;
     gap:10px;
-    align-items:flex-start;
-    margin-top:20px;
-    font-weight:600;
-}
-
-.agree input{
-    width:18px;
-    height:18px;
-    margin-top:2px;
-}
-
-.confirm-btn{
-    width:100%;
-    margin-top:20px;
-}
-
-.confirm-btn:disabled{
-    background:#aaa;
-    cursor:not-allowed;
-    box-shadow:none;
-    transform:none;
-}
-
-/* CONTACT */
-.contact{
-    background:#171717;
-    color:white;
-}
-
-.contact-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:30px;
-    text-align:center;
-}
-
-.contact-box{
-    padding:20px;
-}
-
-.contact-box .icon{
-    font-size:35px;
-    margin-bottom:10px;
-}
-
-.contact-box p{
-    color:#ccc;
-    margin-top:8px;
-}
-
-/* FOOTER */
-footer{
-    background:#0e0e0e;
-    color:#aaa;
-    text-align:center;
-    padding:25px 15px;
-}
-
-footer strong{
-    color:white;
-}
-
-/* POPUP */
-.popup{
-    position:fixed;
-    inset:0;
-    background:rgba(0,0,0,.6);
-    display:none;
-    align-items:center;
-    justify-content:center;
-    z-index:2000;
-    padding:20px;
-}
-
-.popup-box{
-    background:white;
-    max-width:450px;
-    width:100%;
-    padding:35px;
-    border-radius:20px;
-    text-align:center;
-}
-
-.popup-box h2{
-    color:#d81b60;
-    margin-bottom:15px;
-}
-
-.popup-box p{
-    color:#666;
-    line-height:1.6;
     margin-bottom:20px;
 }
 
-/* MOBILE */
-@media(max-width:700px){
+.search input{
+    margin:0;
+}
 
-    .navbar{
+.order{
+    background:white;
+    padding:20px;
+    border-radius:12px;
+    margin-bottom:15px;
+    box-shadow:0 4px 15px rgba(0,0,0,.07);
+}
+
+.order h3{
+    color:#d98b00;
+    margin-bottom:10px;
+}
+
+footer{
+    background:#111;
+    color:white;
+    text-align:center;
+    padding:30px 20px;
+}
+
+.success{
+    display:none;
+    max-width:750px;
+    margin:30px auto;
+    background:#e8f5e9;
+    padding:25px;
+    border-radius:15px;
+    text-align:center;
+}
+
+.success h2{
+    color:#198754;
+    margin-bottom:10px;
+}
+
+@media(max-width:700px){
+    header{
         flex-direction:column;
         gap:12px;
     }
@@ -398,70 +237,74 @@ footer strong{
         font-size:13px;
     }
 
-    .hero{
-        min-height:80vh;
+    .hero h1{
+        font-size:38px;
     }
 
-    .form-grid{
-        grid-template-columns:1fr;
+    .hero p{
+        font-size:16px;
     }
 
-    .form-group.full{
-        grid-column:auto;
+    .title{
+        font-size:28px;
     }
-
-    .booking-box{
-        padding:22px;
-    }
-
-    section{
-        padding:60px 15px;
-    }
-
 }
 </style>
 </head>
 
 <body>
 
-<!-- NAVIGATION -->
 <header>
-<div class="navbar">
 
-<div class="logo">
-MY EVENT
-<span>Celebrate. Decorate. Remember.</span>
-</div>
+<div class="logo">EVENT 19 ANGUL</div>
 
 <nav>
 <a href="#home">Home</a>
+<a href="#gallery">Gallery</a>
 <a href="#services">Services</a>
-<a href="#booking">Book</a>
-<a href="#contact">Contact</a>
+<a href="#booking">Book Now</a>
+<a href="#history">History</a>
 </nav>
 
-</div>
 </header>
 
 
-<!-- HERO -->
+<!-- HOME -->
+
 <section class="hero" id="home">
 
-<div class="hero-content">
+<div>
 
-<div class="badge">📍 Angul, Odisha</div>
+<h1>EVENT 19 ANGUL</h1>
 
-<h1>MY EVENT</h1>
+<p>Celebrate. Decorate. Remember.</p>
 
-<h2>Celebrate. Decorate. Remember.</h2>
+<a href="#booking" class="btn">BOOK NOW</a>
 
-<p>
-Make your special moments beautiful, memorable and unforgettable.
-</p>
+</div>
 
-<a href="#booking" class="btn">
-BOOK YOUR EVENT
-</a>
+</section>
+
+
+<!-- GALLERY -->
+
+<section id="gallery">
+
+<h2 class="title">Our Gallery</h2>
+
+<div class="gallery">
+
+<img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=800&q=80">
+
+<img src="https://images.unsplash.com/photo-1507504031003-b417219a0fde?auto=format&fit=crop&w=800&q=80">
+
+<img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80">
+
+<img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=800&q=80">
+
+<img src="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=800&q=80">
+
+<img src="https://images.unsplash.com/photo-1478146896981-b80fe463b330?auto=format&fit=crop&w=800&q=80">
 
 </div>
 
@@ -469,350 +312,503 @@ BOOK YOUR EVENT
 
 
 <!-- SERVICES -->
-<section class="services" id="services">
 
-<div class="container">
+<section id="services">
 
-<div class="section-title">
-<h2>Our Services</h2>
-<p>Everything you need for your special event.</p>
-</div>
+<h2 class="title">Our Services</h2>
 
-<div class="service-grid">
+<div class="services">
 
 <div class="card">
-<div class="icon">🎉</div>
-<h3>Event Decoration</h3>
-<p>Beautiful decoration concepts for your special occasions.</p>
+<h3>Wedding Events</h3>
+<p>Beautiful decoration and event management.</p>
 </div>
 
 <div class="card">
-<div class="icon">🎂</div>
-<h3>Birthday Party</h3>
-<p>Make birthdays more colourful, fun and memorable.</p>
+<h3>Birthday Events</h3>
+<p>Make your special day memorable.</p>
 </div>
 
 <div class="card">
-<div class="icon">💍</div>
-<h3>Wedding Decoration</h3>
-<p>Elegant decoration for wedding and related celebrations.</p>
+<h3>Party Events</h3>
+<p>Professional event decoration and setup.</p>
 </div>
 
 <div class="card">
-<div class="icon">🎊</div>
-<h3>Anniversary</h3>
-<p>Create a beautiful atmosphere for your special day.</p>
-</div>
-
-<div class="card">
-<div class="icon">🏢</div>
-<h3>Corporate Event</h3>
-<p>Professional event decoration and arrangements.</p>
-</div>
-
-<div class="card">
-<div class="icon">🎈</div>
 <h3>Other Events</h3>
-<p>Customized event solutions according to your requirements.</p>
+<p>Customized event services according to your needs.</p>
 </div>
 
 </div>
 
-</div>
-</section>
-
-
-<!-- WHY MY EVENT -->
-<section class="why">
-
-<div class="container">
-
-<div class="section-title">
-<h2>Why MY EVENT?</h2>
-<p>We focus on making your special moments memorable.</p>
-</div>
-
-<div class="why-grid">
-
-<div class="why-box">
-<strong>✓ Beautiful Decoration</strong>
-<p>Creative and attractive event decoration.</p>
-</div>
-
-<div class="why-box">
-<strong>✓ Event Planning</strong>
-<p>Plan your event according to your requirements.</p>
-</div>
-
-<div class="why-box">
-<strong>✓ Customized Packages</strong>
-<p>Flexible options for different types of events.</p>
-</div>
-
-<div class="why-box">
-<strong>✓ Professional Service</strong>
-<p>Dedicated service for your special occasion.</p>
-</div>
-
-<div class="why-box">
-<strong>✓ Easy Booking</strong>
-<p>Simple online booking request process.</p>
-</div>
-
-</div>
-
-</div>
 </section>
 
 
 <!-- BOOKING -->
-<section class="booking" id="booking">
 
-<div class="container">
+<section id="booking">
 
-<div class="section-title">
-<h2>Book Your Event</h2>
-<p>Fill in your event details below.</p>
-</div>
+<h2 class="title">Book Your Event</h2>
 
-<div class="booking-box">
+<div class="form-box">
 
 <form id="bookingForm">
 
-<div class="form-grid">
+<label>Client Name *</label>
+<input type="text" id="name" required>
 
-<div class="form-group">
-<label>Your Name *</label>
-<input type="text" id="name" required placeholder="Enter your name">
-</div>
+<label>Mobile Number *</label>
+<input type="tel" id="mobile" required>
 
-<div class="form-group">
-<label>Phone Number *</label>
-<input type="tel" id="phone" required placeholder="Enter phone number">
-</div>
+<label>Village / Town *</label>
+<input type="text" id="village" required>
 
-<div class="form-group">
 <label>Event Type *</label>
-
-<select id="eventType" required>
-
+<select id="event" required>
 <option value="">Select Event</option>
-<option>Birthday Party</option>
 <option>Wedding</option>
-<option>Anniversary</option>
-<option>Corporate Event</option>
-<option>Decoration</option>
-<option>Other Event</option>
-
+<option>Birthday</option>
+<option>Engagement</option>
+<option>Party</option>
+<option>Other</option>
 </select>
 
-</div>
-
-<div class="form-group">
-<label>Number of Guests</label>
-<input type="number" id="guests" placeholder="Approx. guests">
-</div>
-
-<div class="form-group">
 <label>Event Date *</label>
 <input type="date" id="date" required>
-</div>
 
-<div class="form-group">
-<label>Event Time *</label>
-<input type="time" id="time" required>
-</div>
+<label>Event Location *</label>
+<input type="text" id="location" required>
 
-<div class="form-group full">
-<label>Venue / Address *</label>
-<input type="text" id="venue" required placeholder="Enter event venue">
-</div>
-
-<div class="form-group full">
 <label>Additional Requirements</label>
-<textarea id="message" placeholder="Tell us about your decoration or event requirements"></textarea>
-</div>
+<textarea id="message"></textarea>
+
+
+<div class="payment-box">
+
+<h3>Payment Schedule</h3>
+
+<p>• Booking Confirmation — <b>20%</b></p>
+<p>• Work Day — <b>50%</b></p>
+<p>• Remaining Payment — <b>30% within 6 days after completion</b></p>
 
 </div>
 
 
-<!-- TERMS -->
 <div class="terms">
 
 <h3>Terms & Conditions</h3>
 
-<ul>
+<p>
+1. Booking confirm କରିବା ପାଇଁ ମୋଟ ମୂଲ୍ୟର 20% advance payment ଦେବା ଆବଶ୍ୟକ।
+</p>
 
-<li>Booking is subject to date and service availability.</li>
+<p>
+2. କାମ ଦିନରେ 50% payment ଦେବାକୁ ହେବ।
+</p>
 
-<li>Event details provided by the customer must be correct.</li>
+<p>
+3. ଅବଶିଷ୍ଟ 30% payment କାମ ସମାପ୍ତ ହେବାର 6 ଦିନ ମଧ୍ୟରେ ପରିଶୋଧ କରିବାକୁ ହେବ।
+</p>
 
-<li>Required advance/payment confirmation may be applicable before final booking confirmation.</li>
+<p>
+4. Booking confirm କରିବା ପୂର୍ବରୁ ଉପରୋକ୍ତ Terms & Conditions ପଢ଼ି ସମ୍ମତି ଦେବା ଆବଶ୍ୟକ।
+</p>
 
-<li>Cancellation or rescheduling will be subject to the applicable booking policy.</li>
-
-<li>Decoration requirements should be communicated before confirmation.</li>
-
-<li>Final service details will be confirmed with the customer.</li>
-
-</ul>
-
-
-<label class="agree">
-
-<input type="checkbox" id="agree">
-
-<span>
-I have read and agree to the Terms & Conditions.
-</span>
-
+<label>
+<input type="checkbox" id="terms" required>
+I agree to the Terms & Conditions
 </label>
 
-
-<button type="submit" id="confirmBtn" class="btn confirm-btn" disabled>
-
-CONFIRM BOOKING
-
-</button>
-
 </div>
+
+
+<button type="submit" class="btn">
+CONFIRM BOOKING
+</button>
 
 </form>
 
 </div>
 
-</div>
-</section>
 
+<div class="success" id="successBox">
 
-<!-- CONTACT -->
-<section class="contact" id="contact">
+<h2>Booking Request Received!</h2>
 
-<div class="container">
-
-<div class="section-title">
-<h2>Contact Us</h2>
-<p>Let's make your event special.</p>
-</div>
-
-<div class="contact-grid">
-
-<div class="contact-box">
-<div class="icon">📍</div>
-<h3>Location</h3>
-<p>Angul, Odisha</p>
-</div>
-
-<div class="contact-box">
-<div class="icon">📞</div>
-<h3>Phone</h3>
-<p>Add your phone number</p>
-</div>
-
-<div class="contact-box">
-<div class="icon">💬</div>
-<h3>WhatsApp</h3>
-<p>Add your WhatsApp number</p>
-</div>
-
-<div class="contact-box">
-<div class="icon">📧</div>
-<h3>Email</h3>
-<p>Add your email address</p>
-</div>
-
-</div>
-
-</div>
-</section>
-
-
-<!-- FOOTER -->
-<footer>
-
-<p>
-<strong>MY EVENT</strong><br>
-Celebrate. Decorate. Remember.
-</p>
+<p id="orderText"></p>
 
 <br>
 
 <p>
-© 2026 MY EVENT • All Rights Reserved
+Our team will call you soon for confirmation and more details and payment.
 </p>
 
-</footer>
+</div>
+
+</section>
 
 
-<!-- SUCCESS POPUP -->
-<div class="popup" id="popup">
+<!-- HISTORY -->
 
-<div class="popup-box">
+<section id="history">
 
-<h2>🎉 Booking Request Sent!</h2>
+<h2 class="title">Order History</h2>
 
-<p>
-Thank you for choosing MY EVENT.
-Your booking request has been received.
-We will contact you for confirmation.
-</p>
+<div class="history">
 
-<button class="btn" onclick="closePopup()">
-OK
+<div class="search">
+
+<input
+type="text"
+id="searchInput"
+placeholder="Search Name, Village or Order No."
+>
+
+<button class="btn" onclick="searchOrders()">
+SEARCH
 </button>
 
 </div>
 
+<div id="historyList"></div>
+
 </div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section>
+
+<h2 class="title">Contact Us</h2>
+
+<div class="card">
+
+<p><b>EVENT 19 ANGUL</b></p>
+
+<br>
+
+<p>📞 Mobile: 123456789</p>
+
+<p>📧 Email: abcd@gmail.com</p>
+
+<br>
+
+<a class="btn"
+href="https://wa.me/91123456789"
+target="_blank">
+WhatsApp Us
+</a>
+
+</div>
+
+</section>
+
+
+<footer>
+
+<p>© 2026 EVENT 19 ANGUL. All Rights Reserved.</p>
+
+</footer>
 
 
 <script>
 
-/* TERMS CHECKBOX */
+/* ==============================
+   CHANGE YOUR DETAILS HERE
+================================ */
 
-const agree = document.getElementById("agree");
-const confirmBtn = document.getElementById("confirmBtn");
-
-agree.addEventListener("change", function(){
-
-    confirmBtn.disabled = !this.checked;
-
-});
+const WHATSAPP_NUMBER = "91123456789";
+const CONTACT_EMAIL = "abcd@gmail.com";
 
 
-/* BOOKING FORM */
+/* ==============================
+   ORDER NUMBER
+================================ */
 
-const form = document.getElementById("bookingForm");
-const popup = document.getElementById("popup");
+function getNextOrderNumber(){
 
-form.addEventListener("submit", function(e){
+    let number =
+    parseInt(localStorage.getItem("eventOrderNumber") || "0") + 1;
+
+    localStorage.setItem("eventOrderNumber", number);
+
+    return "EVENT-" + String(number).padStart(3,"0");
+}
+
+
+/* ==============================
+   BOOKING FORM
+================================ */
+
+document.getElementById("bookingForm")
+.addEventListener("submit", function(e){
 
     e.preventDefault();
 
-    if(!agree.checked){
+    const terms =
+    document.getElementById("terms");
 
-        alert("Please agree to the Terms & Conditions before confirming your booking.");
+    if(!terms.checked){
+
+        alert("Please accept the Terms & Conditions.");
 
         return;
-
     }
 
-    popup.style.display = "flex";
+
+    const orderNo = getNextOrderNumber();
+
+    const booking = {
+
+        orderNo: orderNo,
+
+        name:
+        document.getElementById("name").value,
+
+        mobile:
+        document.getElementById("mobile").value,
+
+        village:
+        document.getElementById("village").value,
+
+        event:
+        document.getElementById("event").value,
+
+        date:
+        document.getElementById("date").value,
+
+        location:
+        document.getElementById("location").value,
+
+        message:
+        document.getElementById("message").value,
+
+        status:"New Booking",
+
+        created:
+        new Date().toLocaleString()
+
+    };
+
+
+    /* Save booking in browser */
+
+    let orders =
+    JSON.parse(localStorage.getItem("eventOrders") || "[]");
+
+    orders.push(booking);
+
+    localStorage.setItem(
+        "eventOrders",
+        JSON.stringify(orders)
+    );
+
+
+    /* WhatsApp message */
+
+    const whatsappMessage =
+
+`EVENT 19 ANGUL - NEW BOOKING
+
+Order No: ${booking.orderNo}
+
+Client Name: ${booking.name}
+
+Mobile: ${booking.mobile}
+
+Village/Town: ${booking.village}
+
+Event: ${booking.event}
+
+Event Date: ${booking.date}
+
+Location: ${booking.location}
+
+Requirements:
+${booking.message}
+
+Payment Schedule:
+20% - Booking
+50% - Work Day
+30% - Within 6 Days After Completion
+
+Status: New Booking`;
+
+
+    const whatsappURL =
+    "https://wa.me/" +
+    WHATSAPP_NUMBER +
+    "?text=" +
+    encodeURIComponent(whatsappMessage);
+
+
+    /* Success message */
+
+    document.getElementById("orderText").innerHTML =
+
+    "<b>Your Order No: " +
+    booking.orderNo +
+    "</b>";
+
+
+    document.getElementById("successBox")
+    .style.display = "block";
+
+
+    /* Open WhatsApp */
+
+    window.open(whatsappURL,"_blank");
+
+
+    /* Reset form */
+
+    document.getElementById("bookingForm").reset();
+
+    loadOrders();
 
 });
 
 
-/* CLOSE POPUP */
+/* ==============================
+   ORDER HISTORY
+================================ */
 
-function closePopup(){
+function loadOrders(){
 
-    popup.style.display = "none";
+    const list =
+    document.getElementById("historyList");
 
-    form.reset();
+    const orders =
+    JSON.parse(localStorage.getItem("eventOrders") || "[]");
 
-    confirmBtn.disabled = true;
+
+    if(orders.length === 0){
+
+        list.innerHTML =
+        "<p>No orders found.</p>";
+
+        return;
+    }
+
+
+    list.innerHTML = "";
+
+
+    orders.slice().reverse().forEach(order => {
+
+        list.innerHTML += `
+
+        <div class="order">
+
+        <h3>${order.orderNo}</h3>
+
+        <p><b>Name:</b> ${order.name}</p>
+
+        <p><b>Mobile:</b> ${order.mobile}</p>
+
+        <p><b>Village:</b> ${order.village}</p>
+
+        <p><b>Event:</b> ${order.event}</p>
+
+        <p><b>Date:</b> ${order.date}</p>
+
+        <p><b>Location:</b> ${order.location}</p>
+
+        <p><b>Status:</b> ${order.status}</p>
+
+        <p><b>Booked:</b> ${order.created}</p>
+
+        </div>
+
+        `;
+
+    });
 
 }
+
+
+/* ==============================
+   SEARCH ORDERS
+================================ */
+
+function searchOrders(){
+
+    const search =
+    document.getElementById("searchInput")
+    .value
+    .toLowerCase()
+    .trim();
+
+
+    const orders =
+    JSON.parse(localStorage.getItem("eventOrders") || "[]");
+
+
+    const results =
+    orders.filter(order =>
+
+        order.name.toLowerCase().includes(search) ||
+
+        order.village.toLowerCase().includes(search) ||
+
+        order.orderNo.toLowerCase().includes(search) ||
+
+        order.mobile.includes(search)
+
+    );
+
+
+    const list =
+    document.getElementById("historyList");
+
+    list.innerHTML = "";
+
+
+    if(results.length === 0){
+
+        list.innerHTML =
+        "<p>No matching order found.</p>";
+
+        return;
+    }
+
+
+    results.slice().reverse().forEach(order => {
+
+        list.innerHTML += `
+
+        <div class="order">
+
+        <h3>${order.orderNo}</h3>
+
+        <p><b>Name:</b> ${order.name}</p>
+
+        <p><b>Mobile:</b> ${order.mobile}</p>
+
+        <p><b>Village:</b> ${order.village}</p>
+
+        <p><b>Event:</b> ${order.event}</p>
+
+        <p><b>Date:</b> ${order.date}</p>
+
+        <p><b>Location:</b> ${order.location}</p>
+
+        <p><b>Status:</b> ${order.status}</p>
+
+        </div>
+
+        `;
+
+    });
+
+}
+
+
+/* Load history */
+
+loadOrders();
 
 </script>
 
