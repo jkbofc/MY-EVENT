@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>EVENT 19 ANGUL</title>
 
 <style>
+
 *{
     margin:0;
     padding:0;
@@ -20,7 +22,7 @@ body{
 }
 
 header{
-    background:linear-gradient(135deg,#111,#333);
+    background:#111;
     color:white;
     padding:18px 7%;
     display:flex;
@@ -34,49 +36,46 @@ header{
 .logo{
     font-size:25px;
     font-weight:bold;
-    letter-spacing:1px;
 }
 
 nav a{
     color:white;
     text-decoration:none;
-    margin-left:20px;
-    font-size:15px;
+    margin-left:18px;
 }
 
 .hero{
     min-height:85vh;
     display:flex;
-    align-items:center;
     justify-content:center;
+    align-items:center;
     text-align:center;
     color:white;
-    padding:40px 20px;
+
     background:
-    linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.65)),
+    linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.7)),
     url("https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=1600&q=80")
     center/cover;
 }
 
 .hero h1{
     font-size:55px;
-    margin-bottom:15px;
 }
 
 .hero p{
     font-size:20px;
-    margin-bottom:30px;
+    margin:15px 0 30px;
 }
 
 .btn{
     display:inline-block;
     background:#ffb300;
     color:#111;
-    padding:14px 28px;
+    padding:13px 25px;
     border-radius:30px;
+    border:none;
     text-decoration:none;
     font-weight:bold;
-    border:none;
     cursor:pointer;
 }
 
@@ -90,9 +89,84 @@ section{
     margin-bottom:35px;
 }
 
+
+/* SERVICES */
+
+.services{
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(230px,1fr));
+    gap:20px;
+}
+
+.service-card{
+    background:white;
+    padding:28px 20px;
+    border-radius:18px;
+    text-align:center;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+    cursor:pointer;
+    transition:.3s;
+}
+
+.service-card:hover{
+    transform:translateY(-7px);
+}
+
+.service-icon{
+    font-size:45px;
+    margin-bottom:15px;
+}
+
+.service-card h3{
+    margin-bottom:10px;
+}
+
+.price{
+    color:#d88b00;
+    font-size:20px;
+    font-weight:bold;
+    margin:10px 0;
+}
+
+
+/* SERVICE DETAILS */
+
+.details-box{
+    display:none;
+    max-width:850px;
+    margin:35px auto 0;
+    background:white;
+    padding:30px;
+    border-radius:18px;
+    box-shadow:0 5px 25px rgba(0,0,0,.12);
+}
+
+.details-box h2{
+    margin-bottom:12px;
+}
+
+.details-box ul{
+    margin:15px 0 20px 20px;
+    line-height:1.9;
+}
+
+.close-btn{
+    background:#222;
+    color:white;
+    padding:9px 18px;
+    border:0;
+    border-radius:20px;
+    cursor:pointer;
+}
+
+
+/* GALLERY */
+
 .gallery{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    grid-template-columns:
+    repeat(auto-fit,minmax(220px,1fr));
     gap:18px;
 }
 
@@ -101,30 +175,10 @@ section{
     height:230px;
     object-fit:cover;
     border-radius:15px;
-    transition:.3s;
 }
 
-.gallery img:hover{
-    transform:scale(1.03);
-}
 
-.services{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:20px;
-}
-
-.card{
-    background:white;
-    padding:25px;
-    border-radius:15px;
-    box-shadow:0 5px 20px rgba(0,0,0,.08);
-    text-align:center;
-}
-
-.card h3{
-    margin-bottom:10px;
-}
+/* BOOKING */
 
 .form-box{
     max-width:750px;
@@ -146,23 +200,22 @@ input,select,textarea{
 
 textarea{
     min-height:100px;
-    resize:vertical;
 }
 
 .payment-box{
     background:#fff8e1;
-    padding:18px;
+    padding:20px;
     border-radius:12px;
     margin:15px 0;
+    line-height:1.9;
 }
 
 .terms{
     background:#f5f5f5;
-    padding:18px;
-    border-radius:10px;
-    margin:20px 0;
+    padding:20px;
+    border-radius:12px;
     line-height:1.7;
-    font-size:14px;
+    margin:20px 0;
 }
 
 .terms label{
@@ -173,43 +226,10 @@ textarea{
 
 .terms input{
     width:auto;
-    margin-right:8px;
 }
 
-.history{
-    max-width:1000px;
-    margin:auto;
-}
 
-.search{
-    display:flex;
-    gap:10px;
-    margin-bottom:20px;
-}
-
-.search input{
-    margin:0;
-}
-
-.order{
-    background:white;
-    padding:20px;
-    border-radius:12px;
-    margin-bottom:15px;
-    box-shadow:0 4px 15px rgba(0,0,0,.07);
-}
-
-.order h3{
-    color:#d98b00;
-    margin-bottom:10px;
-}
-
-footer{
-    background:#111;
-    color:white;
-    text-align:center;
-    padding:30px 20px;
-}
+/* SUCCESS */
 
 .success{
     display:none;
@@ -223,50 +243,121 @@ footer{
 
 .success h2{
     color:#198754;
-    margin-bottom:10px;
 }
 
+
+/* CONTACT */
+
+.contact-box{
+    max-width:600px;
+    margin:auto;
+    background:white;
+    padding:30px;
+    text-align:center;
+    border-radius:18px;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+.whatsapp{
+    background:#25D366;
+    color:white;
+    margin:10px;
+}
+
+.email{
+    background:#222;
+    color:white;
+    margin:10px;
+}
+
+
+/* HISTORY */
+
+.history{
+    max-width:900px;
+    margin:auto;
+}
+
+.search{
+    display:flex;
+    gap:10px;
+}
+
+.search input{
+    margin:0;
+}
+
+.order{
+    background:white;
+    padding:20px;
+    border-radius:12px;
+    margin-top:15px;
+    box-shadow:0 4px 15px rgba(0,0,0,.07);
+}
+
+.order h3{
+    color:#d88b00;
+}
+
+
+footer{
+    background:#111;
+    color:white;
+    text-align:center;
+    padding:30px;
+}
+
+
 @media(max-width:700px){
+
     header{
         flex-direction:column;
-        gap:12px;
+        gap:15px;
     }
 
     nav a{
-        margin:0 7px;
-        font-size:13px;
+        margin:0 5px;
+        font-size:12px;
     }
 
     .hero h1{
         font-size:38px;
     }
 
-    .hero p{
-        font-size:16px;
-    }
-
-    .title{
-        font-size:28px;
-    }
 }
+
 </style>
+
 </head>
+
 
 <body>
 
+
+<!-- HEADER -->
+
 <header>
 
-<div class="logo">EVENT 19 ANGUL</div>
+<div class="logo">
+EVENT 19 ANGUL
+</div>
 
 <nav>
+
 <a href="#home">Home</a>
-<a href="#gallery">Gallery</a>
+
 <a href="#services">Services</a>
+
+<a href="#gallery">Gallery</a>
+
 <a href="#booking">Book Now</a>
+
 <a href="#history">History</a>
+
 </nav>
 
 </header>
+
 
 
 <!-- HOME -->
@@ -279,24 +370,326 @@ footer{
 
 <p>Celebrate. Decorate. Remember.</p>
 
-<a href="#booking" class="btn">BOOK NOW</a>
+<a href="#services" class="btn">
+Explore Services
+</a>
 
 </div>
 
 </section>
 
 
+
+<!-- SERVICES -->
+
+<section id="services">
+
+<h2 class="title">
+Our Services
+</h2>
+
+
+<div class="services">
+
+
+<!-- WEDDING -->
+
+<div class="service-card"
+onclick="showService('wedding')">
+
+<div class="service-icon">
+💍
+</div>
+
+<h3>
+Wedding Decoration
+</h3>
+
+<div class="price">
+Starting ₹15,000
+</div>
+
+<p>
+Click for details
+</p>
+
+</div>
+
+
+
+<!-- BIRTHDAY -->
+
+<div class="service-card"
+onclick="showService('birthday')">
+
+<div class="service-icon">
+🎂
+</div>
+
+<h3>
+Birthday Decoration
+</h3>
+
+<div class="price">
+Starting ₹3,500
+</div>
+
+<p>
+Click for details
+</p>
+
+</div>
+
+
+
+<!-- ENGAGEMENT -->
+
+<div class="service-card"
+onclick="showService('engagement')">
+
+<div class="service-icon">
+💐
+</div>
+
+<h3>
+Engagement Decoration
+</h3>
+
+<div class="price">
+Starting ₹8,000
+</div>
+
+<p>
+Click for details
+</p>
+
+</div>
+
+
+
+<!-- RECEPTION -->
+
+<div class="service-card"
+onclick="showService('reception')">
+
+<div class="service-icon">
+✨
+</div>
+
+<h3>
+Reception Decoration
+</h3>
+
+<div class="price">
+Starting ₹12,000
+</div>
+
+<p>
+Click for details
+</p>
+
+</div>
+
+
+
+<!-- STAGE -->
+
+<div class="service-card"
+onclick="showService('stage')">
+
+<div class="service-icon">
+🎭
+</div>
+
+<h3>
+Stage Decoration
+</h3>
+
+<div class="price">
+Starting ₹7,000
+</div>
+
+<p>
+Click for details
+</p>
+
+</div>
+
+
+
+<!-- PHOTOGRAPHY -->
+
+<div class="service-card"
+onclick="showService('photo')">
+
+<div class="service-icon">
+📸
+</div>
+
+<h3>
+Photography
+</h3>
+
+<div class="price">
+Starting ₹8,000
+</div>
+
+<p>
+Click for details
+</p>
+
+</div>
+
+
+
+<!-- VIDEOGRAPHY -->
+
+<div class="service-card"
+onclick="showService('video')">
+
+<div class="service-icon">
+🎥
+</div>
+
+<h3>
+Videography
+</h3>
+
+<div class="price">
+Starting ₹10,000
+</div>
+
+<p>
+Click for details
+</p>
+
+</div>
+
+
+
+<!-- DJ -->
+
+<div class="service-card"
+onclick="showService('dj')">
+
+<div class="service-icon">
+🎧
+</div>
+
+<h3>
+DJ & Sound
+</h3>
+
+<div class="price">
+Starting ₹5,000
+</div>
+
+<p>
+Click for details
+</p>
+
+</div>
+
+
+
+<!-- LIGHTING -->
+
+<div class="service-card"
+onclick="showService('lighting')">
+
+<div class="service-icon">
+💡
+</div>
+
+<h3>
+Lighting Decoration
+</h3>
+
+<div class="price">
+Starting ₹4,000
+</div>
+
+<p>
+Click for details
+</p>
+
+</div>
+
+
+
+<!-- BALLOON -->
+
+<div class="service-card"
+onclick="showService('balloon')">
+
+<div class="service-icon">
+🎈
+</div>
+
+<h3>
+Balloon Decoration
+</h3>
+
+<div class="price">
+Starting ₹2,500
+</div>
+
+<p>
+Click for details
+</p>
+
+</div>
+
+
+</div>
+
+
+
+<!-- DETAILS BOX -->
+
+<div id="detailsBox"
+class="details-box">
+
+<h2 id="detailTitle"></h2>
+
+<p id="detailPrice"></p>
+
+<h3>
+What's Included
+</h3>
+
+<ul id="detailList"></ul>
+
+<a href="#booking"
+class="btn">
+Book This Service
+</a>
+
+<button
+class="close-btn"
+onclick="closeDetails()">
+Close
+</button>
+
+</div>
+
+</section>
+
+
+
 <!-- GALLERY -->
 
 <section id="gallery">
 
-<h2 class="title">Our Gallery</h2>
+<h2 class="title">
+Our Gallery
+</h2>
 
 <div class="gallery">
 
-<img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=800&q=80">
+<img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=800&q=80">
 
-<img src="https://images.unsplash.com/photo-1507504031003-b417219a0fde?auto=format&fit=crop&w=800&q=80">
+<img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=800&q=80">
 
 <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80">
 
@@ -311,92 +704,172 @@ footer{
 </section>
 
 
-<!-- SERVICES -->
-
-<section id="services">
-
-<h2 class="title">Our Services</h2>
-
-<div class="services">
-
-<div class="card">
-<h3>Wedding Events</h3>
-<p>Beautiful decoration and event management.</p>
-</div>
-
-<div class="card">
-<h3>Birthday Events</h3>
-<p>Make your special day memorable.</p>
-</div>
-
-<div class="card">
-<h3>Party Events</h3>
-<p>Professional event decoration and setup.</p>
-</div>
-
-<div class="card">
-<h3>Other Events</h3>
-<p>Customized event services according to your needs.</p>
-</div>
-
-</div>
-
-</section>
-
 
 <!-- BOOKING -->
 
 <section id="booking">
 
-<h2 class="title">Book Your Event</h2>
+<h2 class="title">
+Book Your Event
+</h2>
+
 
 <div class="form-box">
 
 <form id="bookingForm">
 
-<label>Client Name *</label>
-<input type="text" id="name" required>
 
-<label>Mobile Number *</label>
-<input type="tel" id="mobile" required>
+<label>
+Client Name *
+</label>
 
-<label>Village / Town *</label>
-<input type="text" id="village" required>
+<input
+type="text"
+id="name"
+required
+>
 
-<label>Event Type *</label>
-<select id="event" required>
-<option value="">Select Event</option>
-<option>Wedding</option>
-<option>Birthday</option>
-<option>Engagement</option>
-<option>Party</option>
-<option>Other</option>
+
+<label>
+Mobile Number *
+</label>
+
+<input
+type="tel"
+id="mobile"
+required
+>
+
+
+<label>
+Village / Town *
+</label>
+
+<input
+type="text"
+id="village"
+required
+>
+
+
+<label>
+Select Service *
+</label>
+
+<select
+id="service"
+required>
+
+<option value="">
+Select Service
+</option>
+
+<option>
+Wedding Decoration
+</option>
+
+<option>
+Birthday Decoration
+</option>
+
+<option>
+Engagement Decoration
+</option>
+
+<option>
+Reception Decoration
+</option>
+
+<option>
+Stage Decoration
+</option>
+
+<option>
+Photography
+</option>
+
+<option>
+Videography
+</option>
+
+<option>
+DJ & Sound
+</option>
+
+<option>
+Lighting Decoration
+</option>
+
+<option>
+Balloon Decoration
+</option>
+
 </select>
 
-<label>Event Date *</label>
-<input type="date" id="date" required>
 
-<label>Event Location *</label>
-<input type="text" id="location" required>
+<label>
+Event Date *
+</label>
 
-<label>Additional Requirements</label>
-<textarea id="message"></textarea>
+<input
+type="date"
+id="date"
+required
+>
 
+
+<label>
+Event Location *
+</label>
+
+<input
+type="text"
+id="location"
+required
+>
+
+
+<label>
+Additional Requirements
+</label>
+
+<textarea
+id="message">
+</textarea>
+
+
+
+<!-- PAYMENT -->
 
 <div class="payment-box">
 
-<h3>Payment Schedule</h3>
+<h3>
+Payment Schedule
+</h3>
 
-<p>• Booking Confirmation — <b>20%</b></p>
-<p>• Work Day — <b>50%</b></p>
-<p>• Remaining Payment — <b>30% within 6 days after completion</b></p>
+<p>
+20% — Booking Confirmation
+</p>
+
+<p>
+50% — Work Day
+</p>
+
+<p>
+30% — Within 6 Days After Completion
+</p>
 
 </div>
 
 
+
+<!-- TERMS -->
+
 <div class="terms">
 
-<h3>Terms & Conditions</h3>
+<h3>
+Terms & Conditions
+</h3>
 
 <p>
 1. Booking confirm କରିବା ପାଇଁ ମୋଟ ମୂଲ୍ୟର 20% advance payment ଦେବା ଆବଶ୍ୟକ।
@@ -414,26 +887,46 @@ footer{
 4. Booking confirm କରିବା ପୂର୍ବରୁ ଉପରୋକ୍ତ Terms & Conditions ପଢ଼ି ସମ୍ମତି ଦେବା ଆବଶ୍ୟକ।
 </p>
 
+
 <label>
-<input type="checkbox" id="terms" required>
+
+<input
+type="checkbox"
+id="terms"
+required
+>
+
 I agree to the Terms & Conditions
+
 </label>
 
 </div>
 
 
-<button type="submit" class="btn">
+<button
+type="submit"
+class="btn">
+
 CONFIRM BOOKING
+
 </button>
+
 
 </form>
 
 </div>
 
 
-<div class="success" id="successBox">
 
-<h2>Booking Request Received!</h2>
+<!-- SUCCESS -->
+
+<div
+class="success"
+id="successBox">
+
+<h2>
+Booking Request Received!
+</h2>
 
 <p id="orderText"></p>
 
@@ -448,11 +941,56 @@ Our team will call you soon for confirmation and more details and payment.
 </section>
 
 
+
+<!-- CONTACT -->
+
+<section>
+
+<h2 class="title">
+Contact Us
+</h2>
+
+
+<div class="contact-box">
+
+<h3>
+EVENT 19 ANGUL
+</h3>
+
+<br>
+
+<a
+class="btn whatsapp"
+href="https://wa.me/91123456789"
+target="_blank">
+
+💬 WhatsApp Us
+
+</a>
+
+
+<a
+class="btn email"
+href="mailto:abcd@gmail.com">
+
+📧 Email Us
+
+</a>
+
+</div>
+
+</section>
+
+
+
 <!-- HISTORY -->
 
 <section id="history">
 
-<h2 class="title">Order History</h2>
+<h2 class="title">
+Order History
+</h2>
+
 
 <div class="history">
 
@@ -464,11 +1002,16 @@ id="searchInput"
 placeholder="Search Name, Village or Order No."
 >
 
-<button class="btn" onclick="searchOrders()">
+<button
+class="btn"
+onclick="searchOrders()">
+
 SEARCH
+
 </button>
 
 </div>
+
 
 <div id="historyList"></div>
 
@@ -477,138 +1020,357 @@ SEARCH
 </section>
 
 
-<!-- CONTACT -->
-
-<section>
-
-<h2 class="title">Contact Us</h2>
-
-<div class="card">
-
-<p><b>EVENT 19 ANGUL</b></p>
-
-<br>
-
-<p>📞 Mobile: 123456789</p>
-
-<p>📧 Email: abcd@gmail.com</p>
-
-<br>
-
-<a class="btn"
-href="https://wa.me/91123456789"
-target="_blank">
-WhatsApp Us
-</a>
-
-</div>
-
-</section>
-
 
 <footer>
 
-<p>© 2026 EVENT 19 ANGUL. All Rights Reserved.</p>
+<p>
+© 2026 EVENT 19 ANGUL
+</p>
+
+<p>
+Celebrate. Decorate. Remember.
+</p>
 
 </footer>
 
 
+
 <script>
 
-/* ==============================
-   CHANGE YOUR DETAILS HERE
-================================ */
 
-const WHATSAPP_NUMBER = "91123456789";
-const CONTACT_EMAIL = "abcd@gmail.com";
+/* ==========================
+   WHATSAPP NUMBER
+   CHANGE THIS LATER
+========================== */
+
+const WHATSAPP_NUMBER =
+"91123456789";
 
 
-/* ==============================
-   ORDER NUMBER
-================================ */
+/* ==========================
+   SERVICE DETAILS
+========================== */
 
-function getNextOrderNumber(){
+const services = {
 
-    let number =
-    parseInt(localStorage.getItem("eventOrderNumber") || "0") + 1;
+wedding:{
+title:"Wedding Decoration",
+price:"Starting ₹15,000",
+items:[
+"Wedding Stage Decoration",
+"Flower Decoration",
+"Backdrop Decoration",
+"Entrance Decoration",
+"Basic Lighting",
+"Table Decoration",
+"Setup & Decoration Team"
+]
+},
 
-    localStorage.setItem("eventOrderNumber", number);
+birthday:{
+title:"Birthday Decoration",
+price:"Starting ₹3,500",
+items:[
+"Birthday Backdrop",
+"Balloon Decoration",
+"Birthday Table Setup",
+"Name Decoration",
+"Basic Lights",
+"Theme Decoration"
+]
+},
 
-    return "EVENT-" + String(number).padStart(3,"0");
+engagement:{
+title:"Engagement Decoration",
+price:"Starting ₹8,000",
+items:[
+"Engagement Stage",
+"Flower Decoration",
+"Backdrop",
+"Ring Ceremony Setup",
+"Entrance Decoration",
+"Lighting"
+]
+},
+
+reception:{
+title:"Reception Decoration",
+price:"Starting ₹12,000",
+items:[
+"Reception Stage",
+"Premium Backdrop",
+"Flower Decoration",
+"Entrance Setup",
+"Table Decoration",
+"Lighting Setup"
+]
+},
+
+stage:{
+title:"Stage Decoration",
+price:"Starting ₹7,000",
+items:[
+"Stage Backdrop",
+"Flower Decoration",
+"LED / Basic Lighting",
+"Side Decoration",
+"Stage Carpet",
+"Complete Setup"
+]
+},
+
+photo:{
+title:"Photography",
+price:"Starting ₹8,000",
+items:[
+"Event Photography",
+"Traditional Photography",
+"Selected Photo Editing",
+"Digital Photos",
+"Event Coverage"
+]
+},
+
+video:{
+title:"Videography",
+price:"Starting ₹10,000",
+items:[
+"Full Event Videography",
+"HD Video Recording",
+"Highlight Video",
+"Video Editing",
+"Digital Delivery"
+]
+},
+
+dj:{
+title:"DJ & Sound",
+price:"Starting ₹5,000",
+items:[
+"DJ System",
+"Speakers",
+"Microphones",
+"Music System",
+"Basic Lighting",
+"Operator"
+]
+},
+
+lighting:{
+title:"Lighting Decoration",
+price:"Starting ₹4,000",
+items:[
+"Decorative Lights",
+"Stage Lights",
+"Entrance Lights",
+"LED Lighting",
+"Basic Lighting Setup"
+]
+},
+
+balloon:{
+title:"Balloon Decoration",
+price:"Starting ₹2,500",
+items:[
+"Balloon Arch",
+"Balloon Backdrop",
+"Color Theme",
+"Birthday Table Decoration",
+"Setup & Removal"
+]
+}
+
+};
+
+
+/* ==========================
+   SHOW SERVICE
+========================== */
+
+function showService(service){
+
+const data =
+services[service];
+
+document.getElementById(
+"detailTitle"
+).innerText = data.title;
+
+
+document.getElementById(
+"detailPrice"
+).innerHTML =
+"<b>Rate:</b> " + data.price;
+
+
+const list =
+document.getElementById(
+"detailList"
+);
+
+list.innerHTML = "";
+
+
+data.items.forEach(item=>{
+
+list.innerHTML +=
+"<li>" + item + "</li>";
+
+});
+
+
+document.getElementById(
+"detailsBox"
+).style.display="block";
+
+
+document.getElementById(
+"detailsBox"
+).scrollIntoView({
+behavior:"smooth"
+});
+
 }
 
 
-/* ==============================
-   BOOKING FORM
-================================ */
+/* ==========================
+   CLOSE DETAILS
+========================== */
 
-document.getElementById("bookingForm")
-.addEventListener("submit", function(e){
+function closeDetails(){
 
-    e.preventDefault();
+document.getElementById(
+"detailsBox"
+).style.display="none";
 
-    const terms =
-    document.getElementById("terms");
-
-    if(!terms.checked){
-
-        alert("Please accept the Terms & Conditions.");
-
-        return;
-    }
+}
 
 
-    const orderNo = getNextOrderNumber();
+/* ==========================
+   ORDER NUMBER
+========================== */
 
-    const booking = {
+function getNextOrderNumber(){
 
-        orderNo: orderNo,
-
-        name:
-        document.getElementById("name").value,
-
-        mobile:
-        document.getElementById("mobile").value,
-
-        village:
-        document.getElementById("village").value,
-
-        event:
-        document.getElementById("event").value,
-
-        date:
-        document.getElementById("date").value,
-
-        location:
-        document.getElementById("location").value,
-
-        message:
-        document.getElementById("message").value,
-
-        status:"New Booking",
-
-        created:
-        new Date().toLocaleString()
-
-    };
+let number =
+parseInt(
+localStorage.getItem(
+"eventOrderNumber"
+) || "0"
+) + 1;
 
 
-    /* Save booking in browser */
-
-    let orders =
-    JSON.parse(localStorage.getItem("eventOrders") || "[]");
-
-    orders.push(booking);
-
-    localStorage.setItem(
-        "eventOrders",
-        JSON.stringify(orders)
-    );
+localStorage.setItem(
+"eventOrderNumber",
+number
+);
 
 
-    /* WhatsApp message */
+return "EVENT-" +
+String(number).padStart(3,"0");
 
-    const whatsappMessage =
+}
+
+
+/* ==========================
+   BOOKING
+========================== */
+
+document.getElementById(
+"bookingForm"
+).addEventListener(
+"submit",
+function(e){
+
+e.preventDefault();
+
+
+if(!document.getElementById(
+"terms"
+).checked){
+
+alert(
+"Please accept the Terms & Conditions."
+);
+
+return;
+
+}
+
+
+const orderNo =
+getNextOrderNumber();
+
+
+const booking = {
+
+orderNo:orderNo,
+
+name:
+document.getElementById(
+"name"
+).value,
+
+mobile:
+document.getElementById(
+"mobile"
+).value,
+
+village:
+document.getElementById(
+"village"
+).value,
+
+service:
+document.getElementById(
+"service"
+).value,
+
+date:
+document.getElementById(
+"date"
+).value,
+
+location:
+document.getElementById(
+"location"
+).value,
+
+message:
+document.getElementById(
+"message"
+).value,
+
+status:"New Booking",
+
+created:
+new Date().toLocaleString()
+
+};
+
+
+/* SAVE ORDER */
+
+let orders =
+JSON.parse(
+localStorage.getItem(
+"eventOrders"
+) || "[]"
+);
+
+
+orders.push(booking);
+
+
+localStorage.setItem(
+"eventOrders",
+JSON.stringify(orders)
+);
+
+
+/* WHATSAPP */
+
+const message =
 
 `EVENT 19 ANGUL - NEW BOOKING
 
@@ -620,7 +1382,7 @@ Mobile: ${booking.mobile}
 
 Village/Town: ${booking.village}
 
-Event: ${booking.event}
+Service: ${booking.service}
 
 Event Date: ${booking.date}
 
@@ -629,184 +1391,234 @@ Location: ${booking.location}
 Requirements:
 ${booking.message}
 
-Payment Schedule:
-20% - Booking
-50% - Work Day
-30% - Within 6 Days After Completion
+Payment:
+20% Booking
+50% Work Day
+30% Within 6 Days After Completion
 
 Status: New Booking`;
 
 
-    const whatsappURL =
-    "https://wa.me/" +
-    WHATSAPP_NUMBER +
-    "?text=" +
-    encodeURIComponent(whatsappMessage);
+const whatsappURL =
+"https://wa.me/" +
+WHATSAPP_NUMBER +
+"?text=" +
+encodeURIComponent(message);
 
 
-    /* Success message */
-
-    document.getElementById("orderText").innerHTML =
-
-    "<b>Your Order No: " +
-    booking.orderNo +
-    "</b>";
+window.open(
+whatsappURL,
+"_blank"
+);
 
 
-    document.getElementById("successBox")
-    .style.display = "block";
+/* SUCCESS */
+
+document.getElementById(
+"orderText"
+).innerHTML =
+"<b>Order No: " +
+booking.orderNo +
+"</b>";
 
 
-    /* Open WhatsApp */
+document.getElementById(
+"successBox"
+).style.display="block";
 
-    window.open(whatsappURL,"_blank");
+
+document.getElementById(
+"bookingForm"
+).reset();
 
 
-    /* Reset form */
-
-    document.getElementById("bookingForm").reset();
-
-    loadOrders();
+loadOrders();
 
 });
 
 
-/* ==============================
-   ORDER HISTORY
-================================ */
+/* ==========================
+   LOAD HISTORY
+========================== */
 
 function loadOrders(){
 
-    const list =
-    document.getElementById("historyList");
-
-    const orders =
-    JSON.parse(localStorage.getItem("eventOrders") || "[]");
-
-
-    if(orders.length === 0){
-
-        list.innerHTML =
-        "<p>No orders found.</p>";
-
-        return;
-    }
+const orders =
+JSON.parse(
+localStorage.getItem(
+"eventOrders"
+) || "[]"
+);
 
 
-    list.innerHTML = "";
+const list =
+document.getElementById(
+"historyList"
+);
 
 
-    orders.slice().reverse().forEach(order => {
+list.innerHTML="";
 
-        list.innerHTML += `
 
-        <div class="order">
+orders.slice().reverse()
+.forEach(order=>{
 
-        <h3>${order.orderNo}</h3>
+list.innerHTML += `
 
-        <p><b>Name:</b> ${order.name}</p>
+<div class="order">
 
-        <p><b>Mobile:</b> ${order.mobile}</p>
+<h3>
+${order.orderNo}
+</h3>
 
-        <p><b>Village:</b> ${order.village}</p>
+<p>
+<b>Name:</b>
+${order.name}
+</p>
 
-        <p><b>Event:</b> ${order.event}</p>
+<p>
+<b>Village:</b>
+${order.village}
+</p>
 
-        <p><b>Date:</b> ${order.date}</p>
+<p>
+<b>Service:</b>
+${order.service}
+</p>
 
-        <p><b>Location:</b> ${order.location}</p>
+<p>
+<b>Date:</b>
+${order.date}
+</p>
 
-        <p><b>Status:</b> ${order.status}</p>
+<p>
+<b>Location:</b>
+${order.location}
+</p>
 
-        <p><b>Booked:</b> ${order.created}</p>
+<p>
+<b>Status:</b>
+${order.status}
+</p>
 
-        </div>
+</div>
 
-        `;
+`;
 
-    });
+});
 
 }
 
 
-/* ==============================
-   SEARCH ORDERS
-================================ */
+/* ==========================
+   SEARCH
+========================== */
 
 function searchOrders(){
 
-    const search =
-    document.getElementById("searchInput")
-    .value
-    .toLowerCase()
-    .trim();
+const search =
+document.getElementById(
+"searchInput"
+).value
+.toLowerCase()
+.trim();
 
 
-    const orders =
-    JSON.parse(localStorage.getItem("eventOrders") || "[]");
+const orders =
+JSON.parse(
+localStorage.getItem(
+"eventOrders"
+) || "[]"
+);
 
 
-    const results =
-    orders.filter(order =>
+const results =
+orders.filter(order =>
 
-        order.name.toLowerCase().includes(search) ||
+order.name
+.toLowerCase()
+.includes(search)
 
-        order.village.toLowerCase().includes(search) ||
+||
 
-        order.orderNo.toLowerCase().includes(search) ||
+order.village
+.toLowerCase()
+.includes(search)
 
-        order.mobile.includes(search)
+||
 
-    );
+order.orderNo
+.toLowerCase()
+.includes(search)
 
-
-    const list =
-    document.getElementById("historyList");
-
-    list.innerHTML = "";
-
-
-    if(results.length === 0){
-
-        list.innerHTML =
-        "<p>No matching order found.</p>";
-
-        return;
-    }
+);
 
 
-    results.slice().reverse().forEach(order => {
+const list =
+document.getElementById(
+"historyList"
+);
 
-        list.innerHTML += `
 
-        <div class="order">
+list.innerHTML="";
 
-        <h3>${order.orderNo}</h3>
 
-        <p><b>Name:</b> ${order.name}</p>
+if(results.length===0){
 
-        <p><b>Mobile:</b> ${order.mobile}</p>
+list.innerHTML =
+"<p>No matching order found.</p>";
 
-        <p><b>Village:</b> ${order.village}</p>
-
-        <p><b>Event:</b> ${order.event}</p>
-
-        <p><b>Date:</b> ${order.date}</p>
-
-        <p><b>Location:</b> ${order.location}</p>
-
-        <p><b>Status:</b> ${order.status}</p>
-
-        </div>
-
-        `;
-
-    });
+return;
 
 }
 
 
-/* Load history */
+results.slice().reverse()
+.forEach(order=>{
+
+list.innerHTML += `
+
+<div class="order">
+
+<h3>
+${order.orderNo}
+</h3>
+
+<p>
+<b>Name:</b>
+${order.name}
+</p>
+
+<p>
+<b>Village:</b>
+${order.village}
+</p>
+
+<p>
+<b>Service:</b>
+${order.service}
+</p>
+
+<p>
+<b>Date:</b>
+${order.date}
+</p>
+
+<p>
+<b>Location:</b>
+${order.location}
+</p>
+
+</div>
+
+`;
+
+});
+
+}
+
+
+/* LOAD */
 
 loadOrders();
 
